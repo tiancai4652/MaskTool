@@ -12,7 +12,7 @@ Two ppp.window Show like in one
 
 **总效果：**
 
-![总效果](https://github.com/tiancai4652/MaskTool/tree/master/MaskToolSample/Image/总效果.gif)
+![总效果](https://github.com/tiancai4652/MaskTool/blob/master/MaskToolSample/Image/总效果.gif)
 
 *上面是一个透明画的笔应用和一个阅读的应用，我们可以控制画笔在上层或者下层达到一个蒙版的效果。*
 
@@ -110,7 +110,7 @@ WindowState="Maximized" WindowStyle="None"  Background="Transparent" AllowsTrans
 
 比如
 
-****![投射](https://github.com/tiancai4652/MaskTool/tree/master/MaskToolSample/Image/投射.gif)
+****![投射](https://github.com/tiancai4652/MaskTool/blob/master/MaskToolSample/Image/投射.gif)
 
 因为上层窗体透明，所以当鼠标划过，下层的Button.MouseOver事件也会触发，此时，我们需要给他一个Contaniner，并设置IsHitTestVisible="True"
 
