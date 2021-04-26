@@ -38,9 +38,5 @@ namespace MaskToolSample
             maskControl.IsAppWindowActive = true;
         }
 
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            maskControl.Dispose();
-        }
     }
 }

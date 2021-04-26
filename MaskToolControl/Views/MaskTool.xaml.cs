@@ -65,10 +65,16 @@ namespace MaskToolControl.Views
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             var window = Window.GetWindow(this);
+            window.Closed += Window_Closed;
             var helper = new WindowInteropHelper(Window.GetWindow(window));
             MaskToolModel = new MaskToolModel(AppPath, helper.Handle);
             var loacation = this.TransformToAncestor(window).Transform(new Point(0, 0));
             MaskToolModel.LoadApplicationWindow((int)loacation.X, (int)loacation.Y, (int)this.ActualWidth, (int)this.ActualHeight);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Dispose();
         }
 
         public void ActiveMainWindow()

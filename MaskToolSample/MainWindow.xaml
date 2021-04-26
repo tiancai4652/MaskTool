@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MaskToolSample"
         xmlns:mask="clr-namespace:MaskToolControl.Views;assembly=MaskToolControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Closed="Window_Closed"
+        Title="MainWindow" Height="450" Width="800" 
           WindowState="Maximized" WindowStyle="None"  Background="Transparent" AllowsTransparency="True" Topmost="True" IsHitTestVisible="True">
     <Grid>
         <Grid.RowDefinitions>
