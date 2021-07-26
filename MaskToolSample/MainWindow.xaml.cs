@@ -23,7 +23,7 @@ namespace MaskToolSample
         public MainWindow()
         {
             InitializeComponent();
-            maskControl.AppPath = "mspaint.exe";
+            maskControl.AppPath = @"C:\Users\Sam\Pictures\展会\展会\Child.exe";
         }
 
         private void ActiveMainWindowButton_Click(object sender, RoutedEventArgs e)
@@ -38,5 +38,17 @@ namespace MaskToolSample
             maskControl.IsAppWindowActive = true;
         }
 
+        private void inkMode_Click(object sender, RoutedEventArgs e)
+        {
+            if (inkCanvas.EditingMode == InkCanvasEditingMode.Ink)
+            {
+                inkCanvas.EditingMode = InkCanvasEditingMode.None;
+            }
+            else
+            {
+                inkCanvas.EditingMode = InkCanvasEditingMode.Ink;
+            }
+
+        }
     }
 }

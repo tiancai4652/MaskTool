@@ -8,25 +8,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" 
           WindowState="Maximized" WindowStyle="None"  Background="Transparent" AllowsTransparency="True" Topmost="True" IsHitTestVisible="True">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-
-        <Grid Grid.Row="0" Name="Container" IsHitTestVisible="False">
+    <Grid IsHitTestVisible="True">
+        <Grid Grid.Row="0" Name="Container" IsHitTestVisible="True">
             <mask:MaskTool x:Name="maskControl"></mask:MaskTool>
         </Grid>
-        <InkCanvas Name="inkCanvas" >
-            <InkCanvas.Background>
-                <SolidColorBrush Color="Gray" Opacity="0.05" ></SolidColorBrush>
-            </InkCanvas.Background>
-        </InkCanvas>
-        <Grid Grid.Row="1" Background="White">
-            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Orientation="Horizontal">
-                <Button Width="150" Height="30" Margin="10" Name="ActiveMainWindowButton" Click="ActiveMainWindowButton_Click">Show main window</Button>
-                <Button Width="150" Height="30" Name="ActiveOtherAppWindowButton" Click="ActiveOtherAppWindowButton_Click">Show App window</Button>
-            </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <InkCanvas Name="inkCanvas" IsHitTestVisible="True">
+                <InkCanvas.Background>
+                    <SolidColorBrush Color="Gray" Opacity="{Binding Value,ElementName=progress}" ></SolidColorBrush>
+                </InkCanvas.Background>
+            </InkCanvas>
+            <Grid Grid.Row="1" Background="White" IsHitTestVisible="True">
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Button Width="150" Height="30" Margin="10" Name="ActiveMainWindowButton" Click="ActiveMainWindowButton_Click">Show main window</Button>
+                    <Button Width="150" Height="30" Name="ActiveOtherAppWindowButton" Click="ActiveOtherAppWindowButton_Click">Show App window</Button>
+                    <Button Width="150" Height="30" Name="inkMode" Click="inkMode_Click">Show App window</Button>
+                    <Slider Width="200" Name="progress" Maximum="0.002" Minimum="0.0019" ></Slider>
+                    <TextBlock Text="{Binding Value,ElementName=progress}"></TextBlock>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
